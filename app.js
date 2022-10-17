@@ -29,12 +29,16 @@ let countries = {}
 let lastUpdated = null
 
 console.log("Getting initial cache...")
-getVpnList().then(vpnList => {
-    servers = vpnList.servers
-    countries = vpnList.countries
-    lastUpdated = Date.now()
-    console.log(`Cache added at ${getDate(lastUpdated)}`)
-})
+getVpnList()
+    .then(vpnList => {
+        servers = vpnList.servers
+        countries = vpnList.countries
+        lastUpdated = Date.now()
+        console.log(`Cache added at ${getDate(lastUpdated)}`)
+    })
+    .catch(err => {
+        console.log(err)
+    })
 
 // API Routes
 // Home Route
