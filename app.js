@@ -100,4 +100,5 @@ function errorHandler(err, req, res, next) {
 app.use(errorHandler);
 
 // App Listener
-app.listen(port, () => console.log(`App live on port ${port}!`))
+// app.listen(port, () => console.log(`App live on port ${port}!`))
+module.exports = app
